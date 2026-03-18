@@ -13,9 +13,9 @@ namespace AnimexPlayer
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            await webView1.EnsureCoreWebView2Async();
+            await webView21.EnsureCoreWebView2Async();
 
-            webView1.NavigateToString(GetHtmlPlayer());
+            webView21.NavigateToString(GetHtmlPlayer());
         }
 
         private string GetHtmlPlayer()
@@ -79,12 +79,12 @@ namespace AnimexPlayer
 
         private void btnNaruto_Click(object sender, EventArgs e)
         {
-            webView1.ExecuteScriptAsync("loadVideo('dQw4w9WgXcQ')");
+            webView21.ExecuteScriptAsync("loadVideo('dQw4w9WgXcQ')");
         }
 
         private void btnAOT_Click(object sender, EventArgs e)
         {
-            webView1.ExecuteScriptAsync("loadVideo('MGRm4IzK1SQ')");
+            webView21.ExecuteScriptAsync("loadVideo('MGRm4IzK1SQ')");
         }
     }
 }

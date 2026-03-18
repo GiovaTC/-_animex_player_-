@@ -7,14 +7,14 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Button btnNaruto;
         private System.Windows.Forms.Button btnAOT;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
-                webView1?.Dispose();
+                webView21?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -24,10 +24,10 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.btnNaruto = new System.Windows.Forms.Button();
             this.btnAOT = new System.Windows.Forms.Button();
-            this.webView1 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
 
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
 
             // panelTop
@@ -54,19 +54,19 @@
             this.btnAOT.Click += new System.EventHandler(this.btnAOT_Click);
 
             // webView21
-            this.webView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webView1.Location = new System.Drawing.Point(0, 50);
-            this.webView1.Name = "webView21";
+            this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView21.Location = new System.Drawing.Point(0, 50);
+            this.webView21.Name = "webView21";
 
             // Form1
             this.ClientSize = new System.Drawing.Size(900, 600);
-            this.Controls.Add(this.webView1);
+            this.Controls.Add(this.webView21);
             this.Controls.Add(this.panelTop);
             this.Text = "Animex Player";
             this.Load += new System.EventHandler(this.Form1_Load);
 
             this.panelTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.webView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
         }
     }
