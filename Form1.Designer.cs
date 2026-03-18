@@ -1,80 +1,73 @@
-﻿namespace animex_player
+﻿namespace AnimexPlayer
 {
     partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
 
         private System.Windows.Forms.Panel panelTop;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView1;
         private System.Windows.Forms.Button btnNaruto;
-        private System.Windows.Forms.Button btnAttackOnTitan;
+        private System.Windows.Forms.Button btnAOT;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView1;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
+                webView1?.Dispose();
             }
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
         private void InitializeComponent()
         {
-            panelTop = new Panel();
-            btnNaruto = new Button();
-            btnAttackOnTitan = new Button();
-            webView1 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.btnNaruto = new System.Windows.Forms.Button();
+            this.btnAOT = new System.Windows.Forms.Button();
+            this.webView1 = new Microsoft.Web.WebView2.WinForms.WebView2();
 
-            ((System.ComponentModel.ISupportInitialize)(webView1)).BeginInit();
-            SuspendLayout();
+            this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView1)).BeginInit();
+            this.SuspendLayout();
 
-            // 🔝 PANEL SUPERIOR
-            panelTop.Dock = DockStyle.Top;
-            panelTop.Height = 60;
-            panelTop.BackColor = Color.FromArgb(30, 30, 30);
+            // panelTop
+            this.panelTop.Controls.Add(this.btnNaruto);
+            this.panelTop.Controls.Add(this.btnAOT);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Height = 50;
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
 
-            // 🎌 BOTÓN NARUTO
-            btnNaruto.Text = "Naruto";
-            btnNaruto.Size = new Size(100, 30);
-            btnNaruto.Location = new Point(10, 15);
-            btnNaruto.Click += btnNaruto_Click;
+            // btnNaruto
+            this.btnNaruto.Text = "Naruto";
+            this.btnNaruto.Width = 120;
+            this.btnNaruto.Height = 30;
+            this.btnNaruto.Left = 10;
+            this.btnNaruto.Top = 10;
+            this.btnNaruto.Click += new System.EventHandler(this.btnNaruto_Click);
 
-            // ⚔️ BOTÓN ATTACK ON TITAN
-            btnAttackOnTitan.Text = "Attack on Titan";
-            btnAttackOnTitan.Size = new Size(150, 30);
-            btnAttackOnTitan.Location = new Point(120, 15);
-            btnAttackOnTitan.Click += btnAttackOnTitan_Click;
+            // btnAOT
+            this.btnAOT.Text = "Attack on Titan";
+            this.btnAOT.Width = 150;
+            this.btnAOT.Height = 30;
+            this.btnAOT.Left = 140;
+            this.btnAOT.Top = 10;
+            this.btnAOT.Click += new System.EventHandler(this.btnAOT_Click);
 
-            // Agregar botones al panel
-            panelTop.Controls.Add(btnNaruto);
-            panelTop.Controls.Add(btnAttackOnTitan);
+            // webView21
+            this.webView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView1.Location = new System.Drawing.Point(0, 50);
+            this.webView1.Name = "webView21";
 
-            // 🎬 WEBVIEW
-            webView1.AllowExternalDrop = true;
-            webView1.CreationProperties = null;
-            webView1.DefaultBackgroundColor = Color.Black;
-            webView1.Dock = DockStyle.Fill;
-            webView1.Location = new Point(0, 60);
-            webView1.Name = "webView1";
-            webView1.Size = new Size(800, 390);
-            webView1.ZoomFactor = 1D;
+            // Form1
+            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.Controls.Add(this.webView1);
+            this.Controls.Add(this.panelTop);
+            this.Text = "Animex Player";
+            this.Load += new System.EventHandler(this.Form1_Load);
 
-            // 🪟 FORM
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 600);
-            Controls.Add(webView1);
-            Controls.Add(panelTop);
-            Name = "Form1";
-            Text = "Animex Player";
-            WindowState = FormWindowState.Maximized;
-
-            ((System.ComponentModel.ISupportInitialize)(webView1)).EndInit();
-            ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webView1)).EndInit();
+            this.ResumeLayout(false);
         }
-
-        #endregion
     }
 }
