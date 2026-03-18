@@ -6,8 +6,6 @@ namespace animex_player
 {
     public partial class Form1 : Form
     {
-        string htmlPath;
-
         public Form1()
         {
             InitializeComponent();
@@ -21,13 +19,18 @@ namespace animex_player
             webView1.CoreWebView2.Settings.AreDevToolsEnabled = false;
             webView1.CoreWebView2.Settings.AreDefaultScriptDialogsEnabled = false;
 
-            // Ruta del HTML local
-            htmlPath = Path.Combine(Application.StartupPath, "player.html");
+            // 🔥 Crear dominio local válido
+            webView1.CoreWebView2.SetVirtualHostNameToFolderMapping(
+                "app.local",
+                Application.StartupPath,
+                Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow
+            );
 
-            webView1.CoreWebView2.Navigate(htmlPath);
+            // 🔥 Navegar como si fuera web real
+            webView1.CoreWebView2.Navigate("https://app.local/player.html");
         }
 
-        // 🔥 MÉTODO CORRECTO PARA LLAMAR JS
+        // 🔥 LLAMADA CORRECTA A JAVASCRIPT
         private async void LoadYouTubeVideo(string videoId)
         {
             if (webView1.CoreWebView2 != null)
@@ -46,6 +49,50 @@ namespace animex_player
         private void btnAttackOnTitan_Click(object sender, EventArgs e)
         {
             LoadYouTubeVideo("MGRm4IzK1SQ");
+        }
+
+        // 🔥 HTML INTEGRADO (CLAVE)
+        private string GetPlayerHtml()
+        {
+            return @"
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+    body { margin:0; background:black; }
+    #player { width:100vw; height:100vh; }
+</style>
+</head>
+<body>
+
+<div id='player'></div>
+
+<script src='https://www.youtube.com/iframe_api'></script>
+
+<script>
+    let player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            width: '100%',
+            height: '100%',
+            videoId: 'dQw4w9WgXcQ',
+            playerVars: {
+                origin: 'https://www.youtube.com'
+            }
+        });
+    }
+
+    function loadVideo(videoId) {
+        if (player) {
+            player.loadVideoById(videoId);
+        }
+    }
+</script>
+
+</body>
+</html>";
         }
     }
 }
