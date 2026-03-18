@@ -1,38 +1,42 @@
 ﻿<!DOCTYPE html>
-<html> 
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>AnimeX Player</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            margin: 0;
+            background: black;
+        }
+
+        #player {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
-<body style="margin:0; background:black;">
+<body>
 
     <div id="player"></div>
 
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        document.body.appendChild(tag);
+    <script src="https://www.youtube.com/iframe_api"></script>
 
-        var player;
+    <script>
+        let player;
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
-                height: '100%',
                 width: '100%',
-                videoId: 'J---aiyznGQ', // ejemplo anime
-                pplayerVars: {
-                    autoplay: 1,
-                    controls: 1
-                }
+                height: '100%',
+                videoId: 'J---aiyznGQ'
             });
         }
 
-        // funcion para cambiar video desde C#
         function loadVideo(videoId) {
             if (player) {
                 player.loadVideoById(videoId);
             }
         }
     </script>
+
 </body>
 </html>
