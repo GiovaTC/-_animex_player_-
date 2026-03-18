@@ -43,12 +43,12 @@ namespace animex_player
 
         private void btnNaruto_Click(object sender, EventArgs e)
         {
-            LoadYouTubeVideo("J---aiyznGQ");
+            LoadYouTubeVideo("J---aiyznGQ"); // Naruto clásico
         }
 
         private void btnAttackOnTitan_Click(object sender, EventArgs e)
         {
-            LoadYouTubeVideo("MGRm4IzK1SQ");
+            LoadYouTubeVideo("MGRm4IzK1SQ"); // AOT trailer
         }
 
         // 🔥 HTML INTEGRADO (CLAVE)

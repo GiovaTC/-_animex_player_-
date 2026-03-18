@@ -4,9 +4,11 @@
     {
         private System.ComponentModel.IContainer components = null;
 
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        private System.Windows.Forms.Panel panelTop;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView1;
+        private System.Windows.Forms.Button btnNaruto;
+        private System.Windows.Forms.Button btnAttackOnTitan;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -17,64 +19,62 @@
         }
 
         #region Windows Form Designer generated code
+
         private void InitializeComponent()
         {
-            webView1 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            panelTop = new Panel();
             btnNaruto = new Button();
             btnAttackOnTitan = new Button();
-            ((System.ComponentModel.ISupportInitialize)webView1).BeginInit();
+            webView1 = new Microsoft.Web.WebView2.WinForms.WebView2();
+
+            ((System.ComponentModel.ISupportInitialize)(webView1)).BeginInit();
             SuspendLayout();
-            // 
-            // webView1
-            // 
+
+            // 🔝 PANEL SUPERIOR
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Height = 60;
+            panelTop.BackColor = Color.FromArgb(30, 30, 30);
+
+            // 🎌 BOTÓN NARUTO
+            btnNaruto.Text = "Naruto";
+            btnNaruto.Size = new Size(100, 30);
+            btnNaruto.Location = new Point(10, 15);
+            btnNaruto.Click += btnNaruto_Click;
+
+            // ⚔️ BOTÓN ATTACK ON TITAN
+            btnAttackOnTitan.Text = "Attack on Titan";
+            btnAttackOnTitan.Size = new Size(150, 30);
+            btnAttackOnTitan.Location = new Point(120, 15);
+            btnAttackOnTitan.Click += btnAttackOnTitan_Click;
+
+            // Agregar botones al panel
+            panelTop.Controls.Add(btnNaruto);
+            panelTop.Controls.Add(btnAttackOnTitan);
+
+            // 🎬 WEBVIEW
             webView1.AllowExternalDrop = true;
             webView1.CreationProperties = null;
-            webView1.DefaultBackgroundColor = Color.White;
+            webView1.DefaultBackgroundColor = Color.Black;
             webView1.Dock = DockStyle.Fill;
-            webView1.Location = new Point(0, 0);
+            webView1.Location = new Point(0, 60);
             webView1.Name = "webView1";
-            webView1.Size = new Size(800, 450);
-            webView1.TabIndex = 0;
+            webView1.Size = new Size(800, 390);
             webView1.ZoomFactor = 1D;
-            // 
-            // btnNaruto
-            // 
-            btnNaruto.Location = new Point(60, 26);
-            btnNaruto.Name = "btnNaruto";
-            btnNaruto.Size = new Size(75, 23);
-            btnNaruto.TabIndex = 1;
-            btnNaruto.Text = "button1";
-            btnNaruto.UseVisualStyleBackColor = true;
-            btnNaruto.Click += btnNaruto_Click;
-            // 
-            // btnAttackOnTitan
-            // 
-            btnAttackOnTitan.Location = new Point(169, 26);
-            btnAttackOnTitan.Name = "btnAttackOnTitan";
-            btnAttackOnTitan.Size = new Size(75, 23);
-            btnAttackOnTitan.TabIndex = 2;
-            btnAttackOnTitan.Text = "button2";
-            btnAttackOnTitan.UseVisualStyleBackColor = true;
-            btnAttackOnTitan.Click += btnAttackOnTitan_Click;
-            // 
-            // Form1
-            // 
+
+            // 🪟 FORM
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnAttackOnTitan);
-            Controls.Add(btnNaruto);
+            ClientSize = new Size(1000, 600);
             Controls.Add(webView1);
+            Controls.Add(panelTop);
             Name = "Form1";
             Text = "Animex Player";
-            ((System.ComponentModel.ISupportInitialize)webView1).EndInit();
+            WindowState = FormWindowState.Maximized;
+
+            ((System.ComponentModel.ISupportInitialize)(webView1)).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView1;
-        private Button btnNaruto;
-        private Button btnAttackOnTitan;
     }
 }
