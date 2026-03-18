@@ -1,4 +1,4 @@
-﻿namespace AnimexPlayer
+﻿namespace animex_player
 {
     partial class Form1
     {

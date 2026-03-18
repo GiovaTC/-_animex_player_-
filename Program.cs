@@ -2,7 +2,7 @@ using animex_player;
 using System;
 using System.Windows.Forms;
 
-namespace AnimexPlayer
+namespace animex_player
 {
     static class Program
     {

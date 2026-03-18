@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 
-namespace AnimexPlayer
+namespace animex_player
 {
     public partial class Form1 : Form
     {
